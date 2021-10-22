@@ -1,4 +1,13 @@
-
+// Steven BojLuna
+// CPSC 120-18
+// 2021-10-21
+// sboj5929@csu.fullerton.edu
+// @sboj5929
+//
+// Lab 07-01
+//
+// This program is a card trick.
+//
 #include "mind_reader_functions.h"
 
 #include <unistd.h>
@@ -14,7 +23,7 @@ using namespace std;
 /// \file
 /// Function definitions used in this project
 
-/// There are four suits in a deck of cards, Clubs, Diamonds, Hearts, Spades
+/// There are four suitsWelcome Guide in a deck of cards, Clubs, Diamonds, Hearts, Spades
 const int kNumberOfSuits = 4;
 
 /// Given a two to three letter string that represents a \p card, return
@@ -67,6 +76,33 @@ std::string FaceValue(const std::string& card) {
 /// \remark This is in the inverse of NumericValueToFaceValue()
 int NumericValue(const std::string& face_value) {
   int numeric_value = 0;
+  if (face_value == "A") {
+    numeric_value = 0;
+  } else if (face_value == "2") {
+    numeric_value = 1;
+  } else if (face_value == "3") {
+    numeric_value = 2;
+  } else if (face_value == "4") {
+    numeric_value = 3;
+  } else if (face_value == "5") {
+    numeric_value = 4;
+  } else if (face_value == "6") {
+    numeric_value = 5;
+  } else if (face_value == "7") {
+    numeric_value = 6;
+  } else if (face_value == "8") {
+    numeric_value = 7;
+  } else if (face_value == "9") {
+    numeric_value = 8;
+  } else if (face_value == "1") {
+    numeric_value = 9;
+  } else if (face_value == "J") {
+    numeric_value = 10;
+  } else if (face_value == "Q") {
+    numeric_value = 11;
+  } else if (face_value == "K") {
+    numeric_value = 12;
+  }
   // TODO: Implement this function given the explanation given above.
   return numeric_value;
 }
@@ -111,6 +147,7 @@ int NumericValue(const std::string& face_value) {
 /// 52
 int DeckOrderValue(const std::string& card) {
   int deck_order_value = 0;
+  deck_order_value = NumericValue(FaceValue(card)) * 4 + SuitOffset(Suit(card));
   // TODO: Implement this function given the explanation given above.
   return deck_order_value;
 }
@@ -126,6 +163,33 @@ int DeckOrderValue(const std::string& card) {
 /// \remark This is the inverse of NumericValue()
 std::string NumericValueToFaceValue(int value) {
   string face_value;
+  if (value == 0) {
+    face_value = "A";
+  } else if (value == 1) {
+    face_value = "2";
+  } else if (value == 2) {
+    face_value = "3";
+  } else if (value == 3) {
+    face_value = "4";
+  } else if (value == 4) {
+    face_value = "5";
+  } else if (value == 5) {
+    face_value = "6";
+  } else if (value == 6) {
+    face_value = "7";
+  } else if (value == 7) {
+    face_value = "8";
+  } else if (value == 8) {
+    face_value = "9";
+  } else if (value == 9) {
+    face_value = "10";
+  } else if (value == 10) {
+    face_value = "J";
+  } else if (value == 11) {
+    face_value = "Q";
+  } else if (value == 12) {
+    face_value = "K";
+  }
   // TODO: Implement this function given the explanation given above.
   return face_value;
 }
@@ -141,6 +205,15 @@ int SuitOffset(const std::string& suit) {
   // This follows *alphabetical order* CDHS
   // not CHSD
   int offset = 0;
+  if (suit == "C") {
+    offset = 1;
+  } else if (suit == "D") {
+    offset = 2;
+  } else if (suit == "H") {
+    offset = 3;
+  } else if (suit == "S") {
+    offset = 4;
+  }
   // TODO: Implement this function given the explanation given above.
   return offset;
 }
@@ -162,6 +235,7 @@ int SuitOffset(const std::string& suit) {
 /// \returns The simple_value of the secret card as an int (0, 1, ..., 11, 12)
 int FitchCheneySecretCardValue(int base_value, int steps) {
   int card_value = 0;
+  card_value = (base_value + steps) % 13;
   // TODO: Implement this function given the explanation given above.
   return card_value;
 }
@@ -194,6 +268,22 @@ int FitchCheneySecretSteps(const std::string& card_one,
                            const std::string& card_two,
                            const std::string& card_three) {
   int secret_steps = 0;
+  int a = DeckOrderValue(card_one);
+  int b = DeckOrderValue(card_two);
+  int c = DeckOrderValue(card_three);
+  if (a < b && a < c && b < c) {
+    secret_steps = 1;
+  } else if (a < c && a < b && c < b) {
+    secret_steps = 2;
+  } else if (b < a && b < c && a < c) {
+    secret_steps = 3;
+  } else if (b < c && b < a && c < a) {
+    secret_steps = 4;
+  } else if (c < a && c < b && a < b) {
+   secret_steps = 5;
+ } else {
+   secret_steps = 6;
+ }
   // TODO: implement this function. This function was not previously
   // implemented.
   return secret_steps;
