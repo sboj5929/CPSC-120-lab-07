@@ -97,14 +97,12 @@ int main(int argc, char const* argv[]) {
   // See the example output in the README for guidance.
   string color;
   if (secret_card_suit == "H") || (secret_card_suit == "D") {
-  } else {
     color = "red"
-  }
-  if (secret_card_suit == "C" ) || (secret_card_suit == "S") {
-  } else {
+  } else (secret_card_suit == "C" ) || (secret_card_suit == "S") {
     color = "black"
   }
-  cout << "Your card is" << color <<
-  cout << "It's a "
+  cout << "Your card is" << color << "\n";
+  cout << "It's a number card, isn't it?\n";
+  cout <<"The card is" << << 
   return 0;
 }
