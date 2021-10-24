@@ -20,6 +20,15 @@
 
 using namespace std;
 
+  // At this point you have the secret card's value calculated in
+  // secret_card_value_string and the secret card's suit stored in
+  // secret_card_suit. If you want you can build up the drama by slowly
+  // revealing the card. You may wish to print out that the computer knows what
+  // color the card is (red or black), what suit it is, and that it is a court
+  // card (JQK) or a number card (2, 3, 4, 5, 6, 7, 8, 9, 10). You may use the
+  // function sleep() to slow the computer down so the spectator can see the
+  // computer printing out the messages.
+
 /// \file
 /// Function definitions used in this project
 
@@ -281,7 +290,7 @@ int FitchCheneySecretSteps(const std::string& card_one,
     secret_steps = 4;
   } else if (c < a && c < b && a < b) {
    secret_steps = 5;
- } else {
+ } else if (c < b && c < a && b < a) {
    secret_steps = 6;
  }
   // TODO: implement this function. This function was not previously

@@ -37,7 +37,7 @@ int main(int argc, char const* argv[]) {
   // as much and return 1 to exit.
   vector<string> args = vector<string>(argv, argv + argc);
   if (args.size() < 5) {
-    cout << "Please provide a number to check.\n";
+    cout << "Please provide a card number to check.\n";
     return -1;
   }
   // TODO: Declare 4 string variables: base_card, card_one, card_two, and
@@ -78,9 +78,8 @@ int main(int argc, char const* argv[]) {
   base_value = NumericValue(FaceValue(base_card));
   int steps = 0;
   steps = FitchCheneySecretSteps(card_one, card_two, card_three);
-  cout << FitchCheneySecretSteps << "\n";
-  secret_card_value = FitchCheneySecretCardValue(base_value,steps);
   int secret_card_value;
+  secret_card_value = FitchCheneySecretCardValue(base_value,steps);
   string secret_card_value_string;
   secret_card_value_string = NumericValueToFaceValue(secret_card_value);
 
@@ -96,13 +95,18 @@ int main(int argc, char const* argv[]) {
   // TODO: Print out "Your card is " along with the value and suit of the card.
   // See the example output in the README for guidance.
   string color;
-  if (secret_card_suit == "H") || (secret_card_suit == "D") {
-    color = "red"
-  } else (secret_card_suit == "C" ) || (secret_card_suit == "S") {
-    color = "black"
+  if (secret_card_suit == "H" || secret_card_suit == "D") {
+    color = "red";
+  } else (secret_card_suit == "C" || secret_card_suit == "S") {
+    color = "black";
   }
-  cout << "Your card is" << color << "\n";
+  cout << "Your card is"  << color << "card.\n";
+  if (secret_card_value_string == "A" || secret_card_value_string == "K" ||
+      secret_card_value_string == "Q" || secret_card_value_string == "J") {
+  cout << "It's a face card.\n";
+  } else {
   cout << "It's a number card, isn't it?\n";
-  cout <<"The card is" << << 
+  }
+  cout << "The card is" << secret_card_value_string << secret_card_suit <<".\n";
   return 0;
 }
