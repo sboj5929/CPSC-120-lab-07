@@ -112,7 +112,7 @@ int NumericValue(const std::string& face_value) {
   } else if (face_value == "K") {
     numeric_value = 12;
   }
-  // TODO: Implement this function given the explanation given above.
+  // Implement this function given the explanation given above.
   return numeric_value;
 }
 
@@ -157,7 +157,7 @@ int NumericValue(const std::string& face_value) {
 int DeckOrderValue(const std::string& card) {
   int deck_order_value = 0;
   deck_order_value = NumericValue(FaceValue(card)) * 4 + SuitOffset(Suit(card));
-  // TODO: Implement this function given the explanation given above.
+  // Implement this function given the explanation given above.
   return deck_order_value;
 }
 
@@ -199,7 +199,7 @@ std::string NumericValueToFaceValue(int value) {
   } else if (value == 12) {
     face_value = "K";
   }
-  // TODO: Implement this function given the explanation given above.
+  // Implement this function given the explanation given above.
   return face_value;
 }
 
@@ -223,7 +223,7 @@ int SuitOffset(const std::string& suit) {
   } else if (suit == "S") {
     offset = 4;
   }
-  // TODO: Implement this function given the explanation given above.
+  // Implement this function given the explanation given above.
   return offset;
 }
 
@@ -245,7 +245,7 @@ int SuitOffset(const std::string& suit) {
 int FitchCheneySecretCardValue(int base_value, int steps) {
   int card_value = 0;
   card_value = (base_value + steps) % 13;
-  // TODO: Implement this function given the explanation given above.
+  // Implement this function given the explanation given above.
   return card_value;
 }
 
@@ -286,14 +286,14 @@ int FitchCheneySecretSteps(const std::string& card_one,
     secret_steps = 2;
   } else if (b < a && b < c && a < c) {
     secret_steps = 3;
-  } else if (b < c && b < a && c < a) {
+  } else if (a < b && c < a && c < a) {
     secret_steps = 4;
-  } else if (c < a && c < b && a < b) {
+  } else if (b < a && b < c && c < a) {
    secret_steps = 5;
- } else if (c < b && c < a && b < a) {
+  } else {
    secret_steps = 6;
  }
-  // TODO: implement this function. This function was not previously
+  // implement this function. This function was not previously
   // implemented.
   return secret_steps;
 }

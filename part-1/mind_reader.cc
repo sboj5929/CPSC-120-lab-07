@@ -30,8 +30,8 @@ int main(int argc, char const* argv[]) {
   // program so you can see how the values change. Once you have everything
   // working you can remove the cout statements.
 
-  // TODO: Convert argv to a vector<string>. Name this variable args
-  // TODO: Check to make sure there are enough arguments on the command line
+  // Convert argv to a vector<string>. Name this variable args
+  // Check to make sure there are enough arguments on the command line
   // for your program to continue. You need to have at least 5 arguments to
   // continue. If there aren't enough arguments, print out a message saying
   // as much and return 1 to exit.
@@ -40,13 +40,13 @@ int main(int argc, char const* argv[]) {
     cout << "Please provide a card number to check.\n";
     return -1;
   }
-  // TODO: Declare 4 string variables: base_card, card_one, card_two, and
+  // Declare 4 string variables: base_card, card_one, card_two, and
   // card_three.
   string base_card;
   string card_one;
   string card_two;
   string card_three;
-  // TODO: Copy the values from args into the appropriate variables. Remember
+  // Copy the values from args into the appropriate variables. Remember
   // that args.at(0) is the name of the program and args.at(1) is the base_card.
   // Don't forget to wrap all calls to .at() with a try and catch.
   try {
@@ -58,18 +58,18 @@ int main(int argc, char const* argv[]) {
     cout << "There was a problem reading the input cards.\n";
     return 1;
   }
-  // TODO: Declare a variable of type string named secret_card_suit
-  // TODO: Use Suit() to assign base_card's suit to secret_card_suit
-  // TODO: Declare an integer named base_value
-  // TODO: Use NumericValue() and FaceValue() to find the numeric value of
+  // Declare a variable of type string named secret_card_suit
+  // Use Suit() to assign base_card's suit to secret_card_suit
+  // Declare an integer named base_value
+  // Use NumericValue() and FaceValue() to find the numeric value of
   // base_card. Assign the numeric_value to base_card.
-  // TODO: Declare an integer named steps
-  // TODO: Use FitchCheneySecretSteps() along with the other three cards to
+  // Declare an integer named steps
+  // Use FitchCheneySecretSteps() along with the other three cards to
   // calculate the secret number of steps. Assign this value to steps.
-  // TODO: Declare an integer named secret_card_value
-  // TODO: Use FitchCheneySecretCardValue() with base_value and steps. Assign
+  // Declare an integer named secret_card_value
+  // Use FitchCheneySecretCardValue() with base_value and steps. Assign
   // the return value to secret_card_value.
-  // TODO: Declare a string variable named secret_card_value_string
+  // Declare a string variable named secret_card_value_string
   // Use NumericValueToFaceValue to convert secret_card_value to a string and
   // assign it to secret_card_value_string
   string secret_card_suit;
@@ -92,7 +92,7 @@ int main(int argc, char const* argv[]) {
   // function sleep() to slow the computer down so the spectator can see the
   // computer printing out the messages.
 
-  // TODO: Print out "Your card is " along with the value and suit of the card.
+  // Print out "Your card is " along with the value and suit of the card.
   // See the example output in the README for guidance.
   string color;
   if (secret_card_suit == "H" || secret_card_suit == "D") {
