@@ -1,4 +1,13 @@
-
+// Steven BojLuna
+// CPSC 120-18
+// 2021-10-21
+// sboj5929@csu.fullerton.edu
+// @sboj5929
+//
+// Lab 07-01
+//
+// This program is a card trick.
+//
 /* Do not edit below this line. */
 /* Do not edit below this line. */
 /* Do not edit below this line. */
