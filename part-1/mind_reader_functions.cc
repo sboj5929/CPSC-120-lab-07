@@ -20,19 +20,20 @@
 
 using namespace std;
 
-  // At this point you have the secret card's value calculated in
-  // secret_card_value_string and the secret card's suit stored in
-  // secret_card_suit. If you want you can build up the drama by slowly
-  // revealing the card. You may wish to print out that the computer knows what
-  // color the card is (red or black), what suit it is, and that it is a court
-  // card (JQK) or a number card (2, 3, 4, 5, 6, 7, 8, 9, 10). You may use the
-  // function sleep() to slow the computer down so the spectator can see the
-  // computer printing out the messages.
+// At this point you have the secret card's value calculated in
+// secret_card_value_string and the secret card's suit stored in
+// secret_card_suit. If you want you can build up the drama by slowly
+// revealing the card. You may wish to print out that the computer knows what
+// color the card is (red or black), what suit it is, and that it is a court
+// card (JQK) or a number card (2, 3, 4, 5, 6, 7, 8, 9, 10). You may use the
+// function sleep() to slow the computer down so the spectator can see the
+// computer printing out the messages.
 
 /// \file
 /// Function definitions used in this project
 
-/// There are four suitsWelcome Guide in a deck of cards, Clubs, Diamonds, Hearts, Spades
+/// There are four suitsWelcome Guide in a deck of cards, Clubs, Diamonds,
+/// Hearts, Spades
 const int kNumberOfSuits = 4;
 
 /// Given a two to three letter string that represents a \p card, return
@@ -289,10 +290,10 @@ int FitchCheneySecretSteps(const std::string& card_one,
   } else if (a < b && c < a && c < a) {
     secret_steps = 4;
   } else if (b < a && b < c && c < a) {
-   secret_steps = 5;
+    secret_steps = 5;
   } else {
-   secret_steps = 6;
- }
+    secret_steps = 6;
+  }
   // implement this function. This function was not previously
   // implemented.
   return secret_steps;

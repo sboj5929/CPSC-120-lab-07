@@ -25,7 +25,6 @@ using namespace std;
 /// Main function that uses the functions defined in mind_reader_functions.cc
 /// to perform the magic needed for the Fitch Cheny 5 Card Trick.
 int main(int argc, char const* argv[]) {
-
   // It may be a good idea to put a lot of cout statements through out this
   // program so you can see how the values change. Once you have everything
   // working you can remove the cout statements.
@@ -79,7 +78,7 @@ int main(int argc, char const* argv[]) {
   int steps = 0;
   steps = FitchCheneySecretSteps(card_one, card_two, card_three);
   int secret_card_value;
-  secret_card_value = FitchCheneySecretCardValue(base_value,steps);
+  secret_card_value = FitchCheneySecretCardValue(base_value, steps);
   string secret_card_value_string;
   secret_card_value_string = NumericValueToFaceValue(secret_card_value);
 
@@ -97,16 +96,17 @@ int main(int argc, char const* argv[]) {
   string color;
   if (secret_card_suit == "H" || secret_card_suit == "D") {
     color = "red";
-  } else (secret_card_suit == "C" || secret_card_suit == "S") {
-    color = "black";
-  }
-  cout << "Your card is"  << color << "card.\n";
+  } else
+    (secret_card_suit == "C" || secret_card_suit == "S");
+  { color = "black"; }
+  cout << "Your card is" << color << "card.\n";
   if (secret_card_value_string == "A" || secret_card_value_string == "K" ||
       secret_card_value_string == "Q" || secret_card_value_string == "J") {
-  cout << "It's a face card.\n";
+    cout << "It's a face card.\n";
   } else {
-  cout << "It's a number card, isn't it?\n";
+    cout << "It's a number card, isn't it?\n";
   }
-  cout << "The card is" << secret_card_value_string << secret_card_suit <<".\n";
+  cout << "The card is" << secret_card_value_string << secret_card_suit
+       << ".\n";
   return 0;
 }
